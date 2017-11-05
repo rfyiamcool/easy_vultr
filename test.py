@@ -28,8 +28,15 @@ def start():
     vultr.server.start(SUB_ID)
 
 
+def destroy():
+    vultr = Vultr(API_KEY)
+    vultr.server.destroy(SUB_ID)
+
+
 if __name__ == "__main__":
     if sys.argv[1] == "start":
         start()
     elif sys.argv[1] == "stop":
         stop()
+    elif sys.argv[1] == "destroy":
+        destroy()
